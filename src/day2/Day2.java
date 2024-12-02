@@ -2,6 +2,7 @@ package day2;
 
 import tools.InputHelper;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Day2 {
     public static void main(String... args) {
         Day2 solver = new Day2();
         System.out.println(solver.partOne());
+        System.out.println(solver.partTwo());
     }
 
     private int partOne() {
@@ -25,6 +27,28 @@ public class Day2 {
             if (checkReport(report)) safeReports++;
         }
         System.out.print("Calculated amount of SAFE reports: ");
+        return safeReports;
+    }
+
+    private int partTwo() {
+        int safeReports = 0;
+
+        for (String line : input) {
+            List<Integer> report = new java.util.ArrayList<>(Arrays.stream(line.split(" ")).map(Integer::valueOf).toList());
+            if (!checkReport(report)) {
+                for (int i = 0; i < report.size(); i++) {
+                    List<Integer> modifiedReport = new ArrayList<>(report);
+                    modifiedReport.remove(i);
+                    if (checkReport(modifiedReport)) {
+                        safeReports++;
+                        break;
+                    }
+                }
+            } else {
+                safeReports++;
+            }
+        }
+        System.out.print("Calculated amount of SAFE reports with Problem Dampener active: ");
         return safeReports;
     }
 
