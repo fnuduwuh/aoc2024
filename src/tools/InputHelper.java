@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class InputHelper {
-    public List<String> lines;
+    private List<String> lines;
 
     public InputHelper(int day) {
         try {
