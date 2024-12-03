@@ -19,7 +19,7 @@ public class Day3 {
         Day3 solver = new Day3();
         String regexPt1 = "mul\\([0-9]{1,3},[0-9]{1,3}\\)";
         String regexPt2 = "mul\\([0-9]{1,3},[0-9]{1,3}\\)|do\\(\\)|don't\\(\\)";
-        System.out.println("total is for part one " + solver.solve(regexPt1));
+        System.out.println("total for part one is " + solver.solve(regexPt1));
         System.out.println("total for part two is " + solver.solve(regexPt2));
     }
 
