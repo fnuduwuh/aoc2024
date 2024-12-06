@@ -17,6 +17,14 @@ public class InputHelper {
         }
     }
 
+    public String[][] get2dArray() {
+        String[][] output = new String[this.lines.size()][];
+        for (int i = 0; i < this.lines.size(); i++) {
+            output[i] = lines.get(i).split("");
+        }
+        return output;
+    }
+
     public List<String> getLines() {
         return this.lines;
     }
